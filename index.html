@@ -1,1 +1,91 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مطعم حرتا للأكلات التراثية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#3a170d;--card:#5a2413;--line:#8a4326;--gold:#f2a82b;--cream:#fbeed8;--mute:#d9b896;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2c110a;--card:#451c0f;--line:#74381f}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:Cairo,Tahoma,sans-serif;line-height:1.6}
+header{text-align:center;padding:32px 16px 20px;background:linear-gradient(var(--card),var(--bg))}
+.logo{width:118px;height:118px;border-radius:50%;display:block;margin:0 auto 12px;border:3px solid var(--gold);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+h1{margin:0;font-size:26px;font-weight:800;color:var(--gold)}
+header p{margin:2px 0 0;color:var(--mute);font-size:14px}
+.tag{max-width:480px;margin:8px auto 0;line-height:1.9}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 12px;padding-top:calc(10px + env(safe-area-inset-top,0px));display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:var(--cream);text-decoration:none;font-size:14px;font-weight:600;padding:5px 14px;border:1px solid var(--line);border-radius:20px}
+nav a:hover,nav a:focus-visible{background:var(--gold);color:var(--bg);outline:none}
+main{max-width:640px;margin:0 auto;padding:8px 14px 40px}
+section{margin-top:26px}
+h2{font-size:22px;font-weight:800;color:var(--gold);margin:0 0 4px;display:flex;align-items:center;gap:10px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.note{color:var(--mute);font-size:13px;margin:0 0 6px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0}
+.n{font-weight:600}
+.n small{display:block;font-weight:400;color:var(--mute);font-size:12px}
+.p{font-weight:800;color:var(--gold);white-space:nowrap;font-size:17px}
+.p b{font-size:11px;font-weight:600;color:var(--mute);margin-inline-start:3px}
+.two{display:grid;grid-template-columns:64px 64px;gap:14px}
+.p.two span{display:block;text-align:center;line-height:1.3}
+.p.two i{display:block;font-style:normal;font-size:11px;color:var(--mute);font-weight:600}
+.th{display:grid;grid-template-columns:64px 64px;gap:14px;justify-content:end;font-size:12px;color:var(--mute);font-weight:600;padding:6px 16px 4px}
+.th span{text-align:center}
+.box{background:var(--card);border-radius:14px;padding:4px 16px}
+footer{background:var(--card);text-align:center;padding:24px 16px calc(24px + env(safe-area-inset-bottom,0px));color:var(--mute);font-size:14px}
+footer a.call{display:inline-block;margin:10px 0;background:var(--gold);color:var(--bg);font-weight:800;font-size:20px;padding:8px 26px;border-radius:30px;text-decoration:none;direction:ltr}
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="logo.jpg" alt="شعار مطعم حرتا">
+  <h1>مطعم حرتا للأكلات التراثية</h1>
+  <p class="tag">نعتزّ بتقديم أعرق المأكولات الشعبية والتراثية بالوصفة الأردنية التقليدية، لنضمن لكم وجبة غنية بالأصالة والطعم البلدي الذي لا يُنسى</p>
+</header>
+<nav id="nav"></nav>
+<main id="menu"></main>
+<footer>
+  <div>للطلب والحجز</div>
+  <a class="call" href="tel:0796075252">0796075252</a>
+  <div>عمّان - أبو نصير - مقابل بنك القاهرة عمان</div>
+  <div>الفرع الثاني: السابع، خلف المكتبة</div>
+  <div style="margin-top:8px;font-size:12px">الأسعار بالدينار الأردني</div>
+</footer>
+<script>
+var D=[
+{id:"mansaf",t:"منسف",two:["رومي","بلدي"],i:[["وجبة منسف لحمة",[8,10]],["سدر منسف ١ كيلو",[19.5,25]],["سدر منسف ٢ كيلو",[40,45]],["سدر منسف ٣ كيلو",[55,65]]]},
+{id:"makmoura",t:"مكمورة",i:[["وجبة مكمورة",4],["مكمورة دجاج ٤ أشخاص",17],["مكمورة دجاجتين ٧ أشخاص",27],["مكمورة ٣ دجاجات ١٠ أشخاص",37],["مكمورة دجاج سبيشل","45","زيادة طبقات ودجاج، تكفي ١٣ شخص"],["مكمورة دجاج دبل سبيشل",52],["مكمورة كيلو لحمة ٤ أشخاص",35],["مكمورة ٢ كيلو لحمة ٨ أشخاص",49],["مكمورة ٣ كيلو لحمة ١٠ أشخاص",60],["مكمورة ٤ كيلو لحمة سبيشل",77]]},
+{id:"maqluba",t:"مقلوبة",i:[["سدر مقلوبة دجاجة واحدة",10],["سدر مقلوبة دجاجتين",22],["سدر مقلوبة ٣ دجاجات",35]]},
+{id:"musakhan",t:"مسخن",i:[["مسخن مع دجاجة واحدة",10],["مسخن مع دجاجتين",20],["مسخن مع ٣ دجاجات",29]]},
+{id:"zarb",t:"زرب",note:"زرب، قدرة، أوزي، مندي، برياني",i:[["وجبة زرب ربع دجاجة",3.5],["وجبة زرب نصف دجاجة",4.5],["سدر زرب نصف دجاجة",5.5],["سدر دجاجة واحدة",9],["سدر دجاجتين",17],["سدر ٣ دجاجات",24],["سدر ٤ دجاجات",32]]},
+{id:"jaajeel",t:"جعاجيل",i:[["وجبة جعاجيل حرتا",4.5],["سدر جعاجيل",17],["سدر جعاجيل وسط",26],["سدر جعاجيل كبير",36]]},
+{id:"kabab",t:"كباب عبيدات",i:[["وجبة كباب عبيدات",4.5],["كباب عبيدات ٤ أشخاص",19],["كباب عبيدات وسط",29],["كباب عبيدات كبير",37],["سدر كباب عبيدات سبيشل",48]]},
+{id:"warak",t:"ورق عنب",i:[["سدر ورق عنب وسط",35],["سدر ورق عنب كبير",52],["سدر ورق عنب سبيشل",65]]},
+{id:"salad",t:"السلطات",i:[["سلطة عربية",1.5],["خيار مع لبن",1.5],["مخللات",1]]},
+{id:"drinks",t:"المشروبات",note:"محلي",i:[["بيبسي / ميرندا / سفن",0.5],["شنينة",0.6],["مياه",0.5]]}
+];
+function f(n){n=+n;return n.toFixed(2)}
+var nav="",h="";
+D.forEach(function(s){
+  nav+='<a href="#'+s.id+'">'+s.t+'</a>';
+  h+='<section id="'+s.id+'"><h2>'+s.t+'</h2>';
+  if(s.note)h+='<p class="note">'+s.note+'</p>';
+  if(s.two)h+='<div class="th"><span>'+s.two[0]+'</span><span>'+s.two[1]+'</span></div>';
+  h+='<div class="box">';
+  s.i.forEach(function(r){
+    var p;
+    if(Array.isArray(r[1])){p='<div class="p two"><span>'+f(r[1][0])+'</span><span>'+f(r[1][1])+'</span></div>'}
+    else p='<div class="p">'+f(r[1])+'<b>د.أ</b></div>';
+    h+='<div class="row"><div class="n">'+r[0]+(r[2]?'<small>'+r[2]+'</small>':'')+'</div>'+p+'</div>';
+  });
+  h+='</div></section>';
+});
+document.getElementById("nav").innerHTML=nav;
+document.getElementById("menu").innerHTML=h;
+</script>
+</body>
+</html>
